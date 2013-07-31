@@ -63,8 +63,12 @@ static void FreeImageData(void *info, const void *data, size_t size) {
     return self;
 }
 
-+ imageWithWebPData:(NSData *)data {
++ (UIImage*)imageWithWebPData:(NSData *)data {
+#if __has_feature(objc_arc)
     return [[self alloc] initWithWebPData:data];
+#else
+    return [[[self alloc] initWithWebPData:data] autorelease];
+#endif
 }
 
 @end

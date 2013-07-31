@@ -14,5 +14,6 @@
 #import <Foundation/Foundation.h>
 
 @interface UIImage (WebP)
-
+- (id)initWithWebPData:(NSData *)data;
++ (UIImage*)imageWithWebPData:(NSData *)data;
 @end
